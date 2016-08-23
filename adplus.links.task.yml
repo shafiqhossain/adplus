@@ -1,0 +1,12 @@
+adplus.ad_list:
+  title: Ad List - Active
+  parent: system.admin_content
+  route_name: adplus.ad_list
+  base_route: adplus.ad_list
+  weight: 1
+
+adplus.ad_inactive_list:
+  route_name: adplus.ad_inactive_list
+  title: Ad List - InActive
+  base_route: adplus.ad_list
+  weight: 2
