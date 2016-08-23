@@ -1,0 +1,10 @@
+block.settings.adplus_ad_block:
+  type: block_settings
+  label: 'Ad Block Configuration'
+  mapping:
+    adplus_ad_location:
+      type: integer
+      label: 'Ad Location'
+    adplus_ad_type:
+      type: string
+      label: 'Ad Type'

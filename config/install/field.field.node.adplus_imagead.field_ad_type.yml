@@ -1,0 +1,23 @@
+# field.field.node.adplus_imagead.field_ad_type.yml
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ad_type
+    - node.type.adplus_imagead
+  module:
+    - options
+id: node.adplus_imagead.field_ad_type
+field_name: field_ad_type
+entity_type: node
+bundle: adplus_imagead
+label: 'Ad Type'
+description: 'Select the type of Ad'
+required: true
+translatable: true
+default_value:
+  -
+    value: short
+default_value_callback: ''
+settings: {  }
+field_type: list_string

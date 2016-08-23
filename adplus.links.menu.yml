@@ -1,0 +1,28 @@
+adplus.redirect_ad:
+  title: Ad Redirect
+  route_name: adplus.redirect_ad
+
+adplus.ad_list:
+  title: Ad List
+  parent: system.admin_content
+  route_name: adplus.ad_list
+
+adplus.ad_clicks_list:
+  title: Ad Clicks List
+  route_name: adplus.ad_clicks_list
+
+adplus.ad_active:
+  title: Ad Active
+  route_name: adplus.ad_active
+
+adplus.ad_inactive:
+  title: Ad InActive
+  route_name: adplus.ad_inactive
+
+adplus.ad_reset:
+  title: Ad Reset
+  route_name: adplus.ad_reset
+
+adplus.ad_delete:
+  title: Ad Delete
+  route_name: adplus.ad_delete

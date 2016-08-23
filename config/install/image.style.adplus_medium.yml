@@ -1,0 +1,17 @@
+#image.style.adplus_medium.yml
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - adplus
+name: adplus_medium
+label: 'Ad Image Medium'
+effects:
+  4dae3396-860d-4d45-9dd7-f7c67ca80580:
+    uuid: 4dae3396-860d-4d45-9dd7-f7c67ca80580
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 300
+      height: 400

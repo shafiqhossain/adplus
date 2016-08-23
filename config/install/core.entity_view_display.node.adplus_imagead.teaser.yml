@@ -1,0 +1,38 @@
+# core.entity_view_display.node.adplus_imagead.teaser.yml
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.adplus_imagead.field_active
+    - field.field.node.adplus_imagead.field_ad_image
+    - field.field.node.adplus_imagead.field_ad_impression
+    - field.field.node.adplus_imagead.field_ad_link
+    - field.field.node.adplus_imagead.field_ad_location
+    - field.field.node.adplus_imagead.field_ad_type
+    - field.field.node.adplus_imagead.field_client_name
+    - field.field.node.adplus_imagead.field_end_date
+    - field.field.node.adplus_imagead.field_notes
+    - field.field.node.adplus_imagead.field_start_date
+    - node.type.adplus_imagead
+  module:
+    - user
+id: node.adplus_imagead.teaser
+targetEntityType: node
+bundle: adplus_imagead
+mode: teaser
+content:
+  links:
+    weight: 100
+hidden:
+  body: true
+  field_active: true
+  field_ad_image: true
+  field_ad_impression: true
+  field_ad_link: true
+  field_ad_location: true
+  field_ad_type: true
+  field_client_name: true
+  field_end_date: true
+  field_notes: true
+  field_start_date: true

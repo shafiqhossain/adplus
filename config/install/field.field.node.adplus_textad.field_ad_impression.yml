@@ -1,0 +1,25 @@
+# field.field.node.adplus_textad.field_ad_impression.yml
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ad_impression
+    - node.type.adplus_textad
+id: node.adplus_textad.field_ad_impression
+field_name: field_ad_impression
+entity_type: node
+bundle: adplus_textad
+label: 'Ad Impression'
+description: 'Count the number of ad display'
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

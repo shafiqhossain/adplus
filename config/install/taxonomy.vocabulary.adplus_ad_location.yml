@@ -1,0 +1,12 @@
+# taxonomy.vocabulary.adplus_ad_location.yml
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - adplus
+name: 'Ad Location'
+vid: adplus_ad_location
+description: 'Use ad location to to display ad at different place.'
+hierarchy: 1
+weight: 0

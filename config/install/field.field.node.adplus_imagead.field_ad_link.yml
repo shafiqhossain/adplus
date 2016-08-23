@@ -1,0 +1,19 @@
+# field.field.node.adplus_imagead.field_ad_link.yml
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ad_link
+    - node.type.adplus_imagead
+id: node.adplus_imagead.field_ad_link
+field_name: field_ad_link
+entity_type: node
+bundle: adplus_imagead
+label: 'Ad Link'
+description: 'Enter full url i.e. http://www.example.com/content/example for external url or for internal url enter content url i.e. /node/30'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

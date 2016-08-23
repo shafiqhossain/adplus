@@ -1,0 +1,141 @@
+<?php
+
+/**
+ * @file
+ * Module file for adplus.
+ */
+
+use Drupal\Component\Utility\Unicode;
+use Drupal\Core\Block\BlockPluginInterface;
+
+/**
+ * @defgroup AdPlus
+ * @ingroup Utility
+ * @{
+ * block for advertisement
+ *
+ */
+
+/**
+ * Implements hook_theme()
+ */
+function adplus_theme() {
+    $themes['adplus_filter_active_form'] = [
+ 		'render element' => 'form',
+ 		'template' => 'adplus_filter_form'
+    ];
+
+    $themes['adplus_filter_inactive_form'] = [
+ 		'render element' => 'form',
+ 		'template' => 'adplus_filter_form'
+    ];
+
+   return $themes;
+}
+
+/**
+ * Implementation of hook_page_attachments()
+ *
+ */
+function adplus_page_attachments(array &$page) {
+  $page['#attached']['library'][] = 'adplus/adplus-lib';
+}
+
+
+function adplus_block_build_alter(array &$build, \Drupal\Core\Block\BlockPluginInterface $block) {
+  $id = $block->getPluginId();
+  if($id == 'adplus_ad_block') {
+    $build['#cache']['max-age'] = 0;
+  }
+}
+
+function adplus_page_top(array &$page_top) {
+  $page_top['#cache']['max-age'] = 0;
+}
+
+/**
+  * Implementation of hook_requirements()
+  */
+function adplus_requirements($phase) {
+  $requirements = array();
+
+  $contentTypes = \Drupal::service('entity.manager')->getStorage('node_type')->loadMultiple();
+  $contentTypesList = [];
+  foreach ($contentTypes as $contentType) {
+	$contentTypesList[$contentType->id()] = $contentType->label();
+  }
+
+  //Report Drupal version
+  if ($phase == 'install') {
+    $requirements['adplus_content_types'] = array(
+      'title' => t('AdPlus Content Types'),
+      'value' => 'ImageAd, TextAd',
+    );
+	
+	if(isset($contentTypesList['adplus_imagead']) || isset($contentTypesList['adplus_textad'])) {
+      $requirements['adplus_content_types']['description'] = t('Adplus content type(s) already exists.');
+      $requirements['adplus_content_types']['severity'] = REQUIREMENT_ERROR;
+	}
+  }
+
+
+
+  // Report adplus status
+  if ($phase == 'runtime') {
+    $requirements['adplus_content_types'] = array(
+      'title' => t('AdPlus Content Types'),
+      'value' => 'ImageAd, TextAd',
+    );
+
+	if(isset($contentTypesList['adplus_imagead']) || isset($contentTypesList['adplus_textad'])) {
+      $requirements['adplus_content_types']['description'] = t('Adplus content type(s) installed.');
+      $requirements['adplus_content_types']['severity'] = REQUIREMENT_OK;
+	}
+
+    $requirements['adplus_vocubulary'] = array(
+      'title' => t('AdPlus Vocabulary'),
+      'value' => 'Ad Location',
+    );
+
+    $vocabulary = \Drupal\taxonomy\Entity\Vocabulary::load("adplus_ad_location");
+	if(isset($vocabulary->vid)) {
+      $requirements['adplus_vocubulary']['description'] = t('Adplus vocabulary installed.');
+      $requirements['adplus_vocubulary']['severity'] = REQUIREMENT_OK;
+	}
+	else {
+      $requirements['adplus_vocubulary']['description'] = t('Adplus vocabulary not installed.');
+      $requirements['adplus_vocubulary']['severity'] = REQUIREMENT_ERROR;
+	}
+
+
+
+  }
+
+  return $requirements;
+}
+
+/**
+  * Implementation of hook_entity_delete()
+  */
+function adplus_entity_delete(\Drupal\Core\Entity\EntityInterface $entity) {
+  $entity_type = $entity->getEntityTypeId();
+  $entity_id = $entity->id();
+  if ($entity_type === 'node') {
+    $node_type = $entity->getType();
+	if(in_array($node_type, array('adplus_imagead', 'adplus_textad'))) {
+	  $sql  = "DELETE FROM {adplus_clicks} ";
+	  $sql .= "WHERE entity_id=:entity_id ";
+
+	  $values = array(
+		':entity_id' => $entity_id,
+	  );
+	  Database::getConnection()->query($sql, $values);
+    }
+  }
+}
+
+
+/**
+ * @} End of "defgroup adplus".
+ */
+

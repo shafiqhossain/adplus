@@ -1,0 +1,28 @@
+# field.field.node.adplus_textad.field_ad_location.yml
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ad_location
+    - node.type.adplus_textad
+    - taxonomy.vocabulary.adplus_ad_location
+id: node.adplus_textad.field_ad_location
+field_name: field_ad_location
+entity_type: node
+bundle: adplus_textad
+label: 'Ad Location'
+description: 'Please select the location where the Ad will display'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      adplus_ad_location: adplus_ad_location
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

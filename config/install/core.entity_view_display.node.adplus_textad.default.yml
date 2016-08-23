@@ -1,0 +1,41 @@
+# core.entity_view_display.node.adplus_textad.default.yml
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.adplus_textad.body
+    - field.field.node.adplus_textad.field_active
+    - field.field.node.adplus_textad.field_ad_impression
+    - field.field.node.adplus_textad.field_ad_link
+    - field.field.node.adplus_textad.field_ad_location
+    - field.field.node.adplus_textad.field_ad_type
+    - field.field.node.adplus_textad.field_client_name
+    - field.field.node.adplus_textad.field_end_date
+    - field.field.node.adplus_textad.field_start_date
+    - field.field.node.adplus_textad.field_notes
+    - node.type.adplus_textad
+  module:
+    - text
+    - user
+id: node.adplus_textad.default
+targetEntityType: node
+bundle: adplus_textad
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_active: true
+  field_ad_impression: true
+  field_ad_link: true
+  field_ad_location: true
+  field_ad_type: true
+  field_client_name: true
+  field_end_date: true
+  field_start_date: true
+  field_notes: true
+  links: true
