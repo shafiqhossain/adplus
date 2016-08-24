@@ -1,0 +1,17 @@
+#image.style.adplus_large.yml
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - adplus
+name: adplus_large
+label: 'Ad Image Large'
+effects:
+  3e89e41f-554e-4b97-a8d6-9623137fbc1d:
+    uuid: 3e89e41f-554e-4b97-a8d6-9623137fbc1d
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 300
+      height: 600

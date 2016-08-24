@@ -1,0 +1,25 @@
+# node.type.adplus_textad.yml
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - adplus # module dependency
+name: 'TextAd'
+type: adplus_textad
+description: 'html type Ad content type that can be used for only html type ad'
+help: ''
+has_title: true
+title_label: 'Ad Title'
+settings:
+  node:
+    options:
+      status: true
+      promote: false
+      sticky: false
+      revision: false
+    preview: true
+    submitted: true
+new_revision: false
+preview_mode: 1
+display_submitted: true

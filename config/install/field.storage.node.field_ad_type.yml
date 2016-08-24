@@ -1,0 +1,30 @@
+# field.storage.node.adplus_imagead.field_ad_type.yml
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_ad_type
+field_name: field_ad_type
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: long
+      label: Long
+    -
+      value: medium
+      label: Medium
+    -
+      value: short
+      label: Short
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

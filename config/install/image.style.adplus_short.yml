@@ -1,0 +1,17 @@
+#image.style.adplus_short.yml
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - adplus
+name: adplus_short
+label: 'Ad Image Short'
+effects:
+  20353400-7054-4207-aa97-77a2d34595ba:
+    uuid: 20353400-7054-4207-aa97-77a2d34595ba
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 300
+      height: 250

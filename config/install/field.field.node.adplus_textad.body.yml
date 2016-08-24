@@ -1,0 +1,22 @@
+# field.field.node.adplus_textad.body.yml
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.adplus_textad
+  module:
+    - text
+id: node.textad.body
+field_name: body
+entity_type: node
+bundle: adplus_textad
+label: 'Ad Content'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+field_type: text_with_summary

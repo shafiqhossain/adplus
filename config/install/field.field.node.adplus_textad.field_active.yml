@@ -1,0 +1,23 @@
+# field.field.node.adplus_textad.field_active.yml
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_active
+    - node.type.adplus_textad
+id: node.adplus_textad.field_active
+field_name: field_active
+label: Active
+description: 'If yes then ad will be displayed in the ad block.'
+entity_type: node
+bundle: adplus_textad
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Active
+  off_label: In-Active
+field_type: boolean
