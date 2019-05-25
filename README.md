@@ -63,11 +63,11 @@ You can apply the patches provides there.
 
 # Example:
 
-<img src="long_ad1.jpg" alt="Long Ad" /><br>
+<img src="https://github.com/shafiqhossain/adplus/raw/master/long_ad1.jpg" alt="Long Ad" /><br>
 
-<img src="long_ad2.jpg" alt="Long Ad" /><br>
+<img src="https://github.com/shafiqhossain/adplus/raw/master/long_ad2.jpg" alt="Long Ad" /><br>
 
-<img src="short_ad1.jpg" alt="Short Ad" />
+<img src="https://github.com/shafiqhossain/adplus/raw/master/short_ad1.jpg" alt="Short Ad" />
 
 
 ---------------------------------------------------------------
