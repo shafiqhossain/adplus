@@ -61,8 +61,8 @@ Or
 
 You can apply the patches provides there.
 
-Example:
-------------
+# Example:
+
 <img src="long_ad1.jpg" alt="Long Ad" /><br>
 
 <img src="long_ad2.jpg" alt="Long Ad" /><br>
