@@ -1,9 +1,5 @@
-Drupal colorbox module:
-------------------------
-Maintainer:
-  Md. Shafiq Hossain (https://www.drupal.org/u/shafiqhossain)
-Requires - Drupal 8
-License - GPL (see LICENSE)
+# Drupal Advertise module:
+Display local advertisement in your site
 
 
 Overview:
@@ -16,7 +12,6 @@ as many as "ad locations" from taxonomy.
 For image type of ad, if you upload more then one image, it will display as slideshow
 based on jquery cycle 2 plugin (http://jquery.malsup.com/cycle2/download/).
 
-This module is tested on Drupal 8.1.8 version.
 
 * http://jquery.malsup.com/cycle2/download/
 
@@ -65,3 +60,16 @@ create and rename it as "router.route_provider.old". You can later delete this s
 Or
 
 You can apply the patches provides there.
+
+Example:
+------------
+<img src="long_ad1.jpg" alt="Long Ad" /><br>
+
+<img src="long_ad2.jpg" alt="Long Ad" /><br>
+
+<img src="short_ad1.jpg" alt="Short Ad" />
+
+
+---------------------------------------------------------------
+You can contact me at: <strong>Shafiq Hossain</strong>, <em>md.shafiq.hossain@gmail.com</em>
+
